@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f0f0f;
+  color: white;
+}
+
+#introScreen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.intro-img {
+  width: 160px;
+  height: 160px;
+  animation: zoomAnim 3s forwards;
+}
+
+@keyframes zoomAnim {
+  0% { transform: scale(1.5); opacity: 0; }
+  40% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: #1a1a1a;
+}
+
+.logo-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#searchInput {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: white;
+  outline: none;
+}
+
+.ai-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(32%, 1fr));
+  gap: 12px;
+  padding: 12px;
+}
+
+.ai-card {
+  background: #1f1f1f;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.ai-card:hover {
+  background-color: #292929;
+  transform: scale(1.03);
+}
+
+.ai-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.ai-card h3 {
+  margin: 0;
+  font-size: 15px;
+  color: #fff;
+}
+
+.ai-card span {
+  font-size: 18px;
+  cursor: pointer;
+  display: block;
+  color: gold;
+}
+
+.hidden {
+  display: none;
+  text-align: center;
+  color: gray;
+  padding: 20px;
+  }
