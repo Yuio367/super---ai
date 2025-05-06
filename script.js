@@ -15,7 +15,7 @@ const aiTools = [
   },
   {
     name: "Gemini (Bard)",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Google_Bard_logo.svg",
+    logo: "https://i.ibb.co/9kBL4FgM/1746513758487.png",
     link: "https://bard.google.com/",
     description: "Google’s smart assistant AI for research & creativity.",
     keywords: ["bard", "gemini", "google", "writing", "research", "assistant"]
