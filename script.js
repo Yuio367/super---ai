@@ -14,6 +14,20 @@ const aiTools = [
     keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
   },
   {
+    name: "DeepSeek",
+    logo: "",
+    link: "https://chat.deepseek.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["Deep", "seek", "talk", "write", "best ai", "openai"]
+  },
+  {
+    name: "Grok Beta",
+    logo: "https://i.ibb.co/20TFJWZs/1746517106294.png",
+    link: "https://grok.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+  },
+  {
     name: "Gemini (Bard)",
     logo: "https://i.ibb.co/9kBL4FgM/1746513758487.png",
     link: "https://bard.google.com/",
