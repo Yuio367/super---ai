@@ -112,6 +112,69 @@ const aiTools = [
     keywords: ["picwish", "image editing", "remove background", "photo enhancer", "ai photo", "edit image"]
   },
   {
+    name: "KodeKloud",
+    logo: "https://i.ibb.co/DD2j28LJ/Pp-MXn-Ff9400x400.jpg",
+    link: "https://kodekloud.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+  },
+  {
+    name: "Codeium",
+    logo: "https://i.ibb.co/sfd7H3J/1746527503878.jpg",
+    link: "https://codeium.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+  },
+  {
+    name: "CodeSignal",
+    logo: "https://i.ibb.co/rKS8v1PX/1746527758264.png",
+    link: "https://codesignal.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+  },
+  {
+    name: "Vespa.ai",
+    logo: "https://i.ibb.co/cKHhCVdw/Screenshot-20250506-160942.jpg",
+    link: "https://vespa.ai/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+  },
+  {
+    name: "Tonkean",
+    logo: "https://i.ibb.co/CKX2gzS3/1746528162260.jpg",
+    link: "https://www.tonkean.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+  },
+  {
+    name: "Zapier",
+    logo: "https://i.ibb.co/9Hp3wqrS/1746528352698.png",
+    link: "https://zapier.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+  },
+  {
+    name: "Adobe Firefly",
+    logo: "https://i.ibb.co/0yXJzZZK/1746528535092.jpg",
+    link: "https://www.adobe.com/products/firefly.html",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+  },
+  {
+    name: "FreePik",
+    logo: "https://i.ibb.co/dsWkDn0V/1746528663507.jpg",
+    link: "https://www.freepik.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+  },
+  {
+    name: "Notion",
+    logo: "https://i.ibb.co/nsRKDqXd/1746528763004.png",
+    link: "https://www.notion.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+  },
+  {
     name: "D-ID",
     logo: "https://i.ibb.co/jZr4Wnpt/1746515531513.png",
     link: "https://www.d-id.com/",
