@@ -101,3 +101,25 @@ body {
   color: gray;
   padding: 20px;
   }
+.hidden {
+  display: none;
+}
+
+#suggestiveBox {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #1e1e1e;
+  color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+#suggestiveBox ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#suggestiveBox li {
+  padding: 4px 0;
+  border-bottom: 1px solid #333;
+}
