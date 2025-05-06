@@ -15,7 +15,7 @@ const aiTools = [
   },
   {
     name: "DeepSeek",
-    logo: "",
+    logo: "https://i.ibb.co/KTm87D7/deepseekappiconontransparentbackgroundfreepng.png",
     link: "https://chat.deepseek.com/",
     description: "Powerful AI for conversations, writing, coding.",
     keywords: ["Deep", "seek", "talk", "write", "best ai", "openai"]
@@ -54,6 +54,62 @@ const aiTools = [
     link: "https://leonardo.ai/",
     description: "Next-gen tool for creative image generation.",
     keywords: ["leonardo", "ai art", "image tool", "best", "generator"]
+  },
+  {
+    name: "RecCloud",
+    logo: "https://i.ibb.co/ycdQv5WZ/reccloudreccloud.png",
+    link: "https://reccloud.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["Rec", "cloud", "talk", "write", "best ai", "openai"]
+  },
+  {
+    name: "Replit",
+    logo: "https://i.ibb.co/2YntKP15/2048px-New-Replit-Logosvg.png",
+    link: "https://replit.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["Replit", "coding", "talk", "write", "best ai", "openai"]
+  },
+  {
+    name: "Synthesia",
+    logo: "https://i.ibb.co/B2WpZ6TV/1746518444450.png",
+    link: "https://www.synthesia.io/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["synthesia", "video", "talk", "write", "best ai", "openai"]
+  },
+  {
+    name: "Soundraw",
+    logo: "https://i.ibb.co/Mkh2ZcNZ/1746518617540.jpg",
+    link: "https://soundraw.io/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["soundraw", "music", "talk", "write", "best ai", "openai"]
+  },
+  {
+    name: "Fliki",
+    logo: "https://i.ibb.co/MwMct6S/1746518755619.png",
+    link: "https://fliki.ai/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["Fliki", "gpt", "talk", "write", "best ai", "openai"]
+  },
+  {
+    name: "StarryAI",
+    logo: "https://i.ibb.co/277J0Cjs/1746518879014.png",
+    link: "https://starryai.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+  },
+  {
+    name: "SlidesAI",
+    logo: "https://i.ibb.co/Z1X5W9tD/slidesaiio.png",
+    link: "https://www.slidesai.io/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+  },
+  {
+    name: "PicWish AI Photo Editor",
+    logo: "https://i.ibb.co/hFwgS7rV/1746519141007.png",
+    link: "https://picwish.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
   },
   {
     name: "D-ID",
