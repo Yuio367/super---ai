@@ -140,14 +140,34 @@ function renderTools(tools) {
 
 // Initial render
 renderTools(aiTools);
-
-// Search filter
+// Updated Search filter with Suggestive box
 document.getElementById("searchInput").addEventListener("input", (e) => {
   const prompt = e.target.value.toLowerCase();
   const matches = aiTools.filter(tool =>
     tool.keywords.some(k => prompt.includes(k)) || tool.name.toLowerCase().includes(prompt)
   );
 
-  document.getElementById("noMatchMsg").classList.toggle("hidden", matches.length > 0);
+  const noMatch = matches.length === 0;
+  document.getElementById("noMatchMsg").classList.toggle("hidden", !noMatch);
+  document.getElementById("suggestiveBox").classList.toggle("hidden", !noMatch);
+
+  if (noMatch) {
+    const allKeywords = [...new Set(aiTools.flatMap(tool => tool.keywords))];
+    const suggestions = allKeywords.filter(k => k.includes(prompt) || prompt.includes(k)).slice(0, 6);
+
+    const suggestiveList = document.getElementById("suggestiveList");
+    suggestiveList.innerHTML = "";
+
+    if (suggestions.length) {
+      suggestions.forEach(s => {
+        const li = document.createElement("li");
+        li.textContent = s;
+        suggestiveList.appendChild(li);
+      });
+    } else {
+      suggestiveList.innerHTML = "<li>No related keywords found</li>";
+    }
+  }
+
   renderTools(matches);
 });
