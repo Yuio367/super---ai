@@ -22,14 +22,14 @@ const aiTools = [
   },
   {
     name: "Midjourney",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/20/Midjourney_Emblem.png",
+    logo: "https://i.ibb.co/S7K5YQWZ/Midjourney-Emblem.png",
     link: "https://www.midjourney.com/",
     description: "Top-rated AI for generating images from text.",
     keywords: ["image", "art", "visual", "design", "generator", "drawing"]
   },
   {
     name: "Runway ML",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Runway_logo.svg",
+    logo: "https://i.ibb.co/9HJtxyGn/1746515403349.jpg",
     link: "https://runwayml.com/",
     description: "Video editing and AI content creation tool.",
     keywords: ["video", "editing", "runway", "ai video", "generate video"]
@@ -43,7 +43,7 @@ const aiTools = [
   },
   {
     name: "D-ID",
-    logo: "https://d-id.com/wp-content/uploads/2021/07/cropped-D-ID_Logo_512x512-192x192.png",
+    logo: "https://i.ibb.co/jZr4Wnpt/1746515531513.png",
     link: "https://www.d-id.com/",
     description: "Create talking avatars and videos with text.",
     keywords: ["avatar", "video", "d-id", "face", "lip sync", "animation"]
