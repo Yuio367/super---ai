@@ -160,10 +160,15 @@ document.getElementById("searchInput").addEventListener("input", (e) => {
 
     if (suggestions.length) {
       suggestions.forEach(s => {
-        const li = document.createElement("li");
-        li.textContent = s;
-        suggestiveList.appendChild(li);
-      });
+  const li = document.createElement("li");
+  li.textContent = s;
+  li.style.cursor = "pointer";
+  li.onclick = () => {
+    document.getElementById("searchInput").value = s;
+    document.getElementById("searchInput").dispatchEvent(new Event("input"));
+  };
+  suggestiveList.appendChild(li);
+});
     } else {
       suggestiveList.innerHTML = "<li>No related keywords found</li>";
     }
