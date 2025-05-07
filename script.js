@@ -175,6 +175,83 @@ const aiTools = [
     keywords: ["notion", "productivity", "note-taking", "project management", "team collaboration", "task management", "knowledge base", "document organization", "workspace", "all-in-one workspace", "organization tool"]
   },
   {
+    name: "Grammarly",
+    logo: "https://i.ibb.co/VWrMPgqb/1746613491424.webp",
+    link: "https://www.grammarly.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    
+  },
+  {
+    name: "Microsoft Copilot",
+    logo: "https://i.ibb.co/xt1H5wmk/1746613828563.jpg",
+    link: "https://copilot.microsoft.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    
+  },
+  {
+    name: "Sora.com",
+    logo: "https://i.ibb.co/tpkDvFVK/1746614113197.jpg",
+    link: "https://sora.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    
+  },
+  {
+    name: "Easy With AI(Capcut)",
+    logo: "https://i.ibb.co/PZ0LkGvW/1746614284308.jpg",
+    link: "https://easywithai.com/ai-video-tools/capcut/",
+    description: "Powerful AI for conversations, writing, coding.",
+    
+  },
+  {
+    name: "HubSpot",
+    logo: "https://i.ibb.co/1GP3b50S/1746614455407.jpg",
+    link: "https://www.hubspot.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    
+  },
+  {
+    name: "Gong.io",
+    logo: "https://i.ibb.co/kVXZHWDh/gonglogo.png",
+    link: "https://www.gong.io/",
+    description: "Powerful AI for conversations, writing, coding.",
+    
+  },
+  {
+    name: "Salesforce",
+    logo: "https://i.ibb.co/93ChtMYh/1746614736083.jpg",
+    link: "https://www.salesforce.com/in/",
+    description: "Powerful AI for conversations, writing, coding.",
+    
+  },
+  {
+    name: "Gamma",
+    logo: "https://i.ibb.co/VYJF5bqV/1746614868411.png",
+    link: "https://gamma.app/",
+    description: "Powerful AI for conversations, writing, coding.",
+    
+  },
+  {
+    name: "Slidebean",
+    logo: "https://i.ibb.co/jZhxskGC/1746614990780.jpg",
+    link: "https://slidebean.com/",
+    description: "Powerful AI for conversations, writing, coding.",
+    
+  },
+  {
+    name: "Beautiful.ai",
+    logo: "https://i.ibb.co/nMbwHYHZ/1746615150102.png",
+    link: "https://www.beautiful.ai/",
+    description: "Powerful AI for conversations, writing, coding.",
+    
+  },
+  {
+    name: "Two AI",
+    logo: "https://i.ibb.co/FL5tbpSx/1746615374659.png",
+    link: "https://chat.two.ai",
+    description: "Powerful AI for conversations, writing, coding.",
+    
+  },
+  {
     name: "D-ID",
     logo: "https://i.ibb.co/jZr4Wnpt/1746515531513.png",
     link: "https://www.d-id.com/",
