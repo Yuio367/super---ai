@@ -29,7 +29,7 @@ const aiTools = [
   },
   {
     name: "Gemini (Bard)",
-    logo: "https://i.ibb.co/9kBL4FgM/1746513758487.png",
+    logo: "https://i.ibb.co/N2cWXzQm/1746597687106.png",
     link: "https://bard.google.com/",
     description: "Google’s smart assistant AI for research & creativity.",
     keywords: ["bard", "gemini", "google", "writing", "research", "assistant"]
@@ -57,7 +57,7 @@ const aiTools = [
   },
   {
     name: "RecCloud",
-    logo: "https://i.ibb.co/ycdQv5WZ/reccloudreccloud.png",
+    logo: "https://i.ibb.co/zW8mkcZZ/1746597795581.png",
     link: "https://reccloud.com/",
     description: "Powerful AI for conversations, writing, coding.",
     keywords: ["reccloud", "screen record", "video editing", "record online", "clip", "video tools"]
