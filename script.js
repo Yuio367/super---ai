@@ -116,63 +116,63 @@ const aiTools = [
     logo: "https://i.ibb.co/DD2j28LJ/Pp-MXn-Ff9400x400.jpg",
     link: "https://kodekloud.com/",
     description: "Powerful AI for conversations, writing, coding.",
-    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+    keywords: ["kodekloud", "devops", "docker", "kubernetes", "linux", "cloud", "terraform", "ansible", "cicd", "certification", "labs", "practice", "sysadmin", "learning", "it automation"]
   },
   {
     name: "Codeium",
     logo: "https://i.ibb.co/sfd7H3J/1746527503878.jpg",
     link: "https://codeium.com/",
     description: "Powerful AI for conversations, writing, coding.",
-    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+    keywords: ["codeium", "ai coding", "autocomplete", "code assistant", "programming", "intellisense", "developer tools", "ide extension", "code generation", "code suggestions", "productivity", "coding ai"]
   },
   {
     name: "CodeSignal",
     logo: "https://i.ibb.co/rKS8v1PX/1746527758264.png",
     link: "https://codesignal.com/",
     description: "Powerful AI for conversations, writing, coding.",
-    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+    keywords: ["codesignal", "coding test", "interview prep", "technical assessment", "developer skills", "online test", "hiring platform", "coding challenge", "test automation", "skill evaluation", "tech hiring", "programming test"]
   },
   {
     name: "Vespa.ai",
     logo: "https://i.ibb.co/cKHhCVdw/Screenshot-20250506-160942.jpg",
     link: "https://vespa.ai/",
     description: "Powerful AI for conversations, writing, coding.",
-    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+    keywords: ["vespa.ai", "vespa", "search engine", "big data", "real-time search", "vector search", "AI-powered search", "scalable search", "document ranking", "AI model serving", "search platform", "recommendation engine"]
   },
   {
     name: "Tonkean",
     logo: "https://i.ibb.co/CKX2gzS3/1746528162260.jpg",
     link: "https://www.tonkean.com/",
     description: "Powerful AI for conversations, writing, coding.",
-    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+    keywords: ["tonkean", "workflow automation", "process automation", "no-code automation", "enterprise automation", "operations automation", "business automation", "AI operations", "automation builder", "internal tools"]
   },
   {
     name: "Zapier",
     logo: "https://i.ibb.co/9Hp3wqrS/1746528352698.png",
     link: "https://zapier.com/",
     description: "Powerful AI for conversations, writing, coding.",
-    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+    keywords: ["zapier", "automation", "workflow", "connect apps", "task automation", "app integration", "zap", "automate tasks", "no-code", "productivity", "time-saving", "workflow builder"]
   },
   {
     name: "Adobe Firefly",
     logo: "https://i.ibb.co/0yXJzZZK/1746528535092.jpg",
     link: "https://www.adobe.com/products/firefly.html",
     description: "Powerful AI for conversations, writing, coding.",
-    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+    keywords: ["adobe firefly", "AI art", "generative art", "image generation", "text-to-image", "creative AI", "design tool", "AI creativity", "graphic design", "digital art", "adobe creative cloud"]
   },
   {
     name: "FreePik",
     logo: "https://i.ibb.co/dsWkDn0V/1746528663507.jpg",
     link: "https://www.freepik.com/",
     description: "Powerful AI for conversations, writing, coding.",
-    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+    keywords: ["freepik", "stock images", "vectors", "illustrations", "design resources", "graphics", "creative assets", "free images", "stock vectors", "design inspiration", "online resources"]
   },
   {
     name: "Notion",
     logo: "https://i.ibb.co/nsRKDqXd/1746528763004.png",
     link: "https://www.notion.com/",
     description: "Powerful AI for conversations, writing, coding.",
-    keywords: ["chat", "gpt", "talk", "write", "best ai", "openai"]
+    keywords: ["notion", "productivity", "note-taking", "project management", "team collaboration", "task management", "knowledge base", "document organization", "workspace", "all-in-one workspace", "organization tool"]
   },
   {
     name: "D-ID",
