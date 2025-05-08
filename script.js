@@ -260,7 +260,6 @@ const aiTools = [
   }
   // You can add more here...
 ];
-
 // Load all tools
 function renderTools(tools) {
   const container = document.getElementById("aiList");
@@ -273,13 +272,17 @@ function renderTools(tools) {
       <h3>${tool.name}</h3>
       <span title="${tool.description}">★</span>
     `;
-    card.onclick = () => window.open(tool.link, "_blank");
+    card.onclick = () => {
+      window.open(tool.link, "_blank");
+      addToRecent(tool); // Track recently used tool
+    };
     container.appendChild(card);
   });
 }
 
 // Initial render
 renderTools(aiTools);
+
 // Updated Search filter with Suggestive box
 document.getElementById("searchInput").addEventListener("input", (e) => {
   const prompt = e.target.value.toLowerCase();
@@ -300,15 +303,15 @@ document.getElementById("searchInput").addEventListener("input", (e) => {
 
     if (suggestions.length) {
       suggestions.forEach(s => {
-  const li = document.createElement("li");
-  li.textContent = s;
-  li.style.cursor = "pointer";
-  li.onclick = () => {
-    document.getElementById("searchInput").value = s;
-    document.getElementById("searchInput").dispatchEvent(new Event("input"));
-  };
-  suggestiveList.appendChild(li);
-});
+        const li = document.createElement("li");
+        li.textContent = s;
+        li.style.cursor = "pointer";
+        li.onclick = () => {
+          document.getElementById("searchInput").value = s;
+          document.getElementById("searchInput").dispatchEvent(new Event("input"));
+        };
+        suggestiveList.appendChild(li);
+      });
     } else {
       suggestiveList.innerHTML = "<li>No related keywords found</li>";
     }
