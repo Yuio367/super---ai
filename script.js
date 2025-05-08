@@ -389,18 +389,109 @@ function renderRecent() {
     container.appendChild(div);
   });
 }
-// Hide "Currently used..." section when search input is focused
-document.getElementById("searchInput").addEventListener("focus", () => {
+// Maintain original search input handler
+document.getElementById("searchInput").addEventListener("input", (e) => {
+  const prompt = e.target.value.toLowerCase();
+  const matches = aiTools.filter(tool =>
+    tool.keywords.some(k => prompt.includes(k)) || tool.name.toLowerCase().includes(prompt)
+  );
+
+  const noMatch = matches.length === 0;
+  document.getElementById("noMatchMsg").classList.toggle("hidden", !noMatch);
+  document.getElementById("suggestiveBox").classList.toggle("hidden", !noMatch);
+
+  if (noMatch) {
+    const allKeywords = [...new Set(aiTools.flatMap(tool => tool.keywords))];
+    const suggestions = allKeywords.filter(k => k.includes(prompt) || prompt.includes(k)).slice(0, 6);
+
+    const suggestiveList = document.getElementById("suggestiveList");
+    suggestiveList.innerHTML = "";
+
+    if (suggestions.length) {
+      suggestions.forEach(s => {
+        const li = document.createElement("li");
+        li.textContent = s;
+        li.style.cursor = "pointer";
+        li.onclick = () => {
+          document.getElementById("searchInput").value = s;
+          document.getElementById("searchInput").dispatchEvent(new Event("input"));
+        };
+        suggestiveList.appendChild(li);
+      });
+    } else {
+      suggestiveList.innerHTML = "<li>No related keywords found</li>";
+    }
+  }
+
+  renderTools(matches);
+
+  // Hide "Currently used..." if any search is active
+  const recentSection = document.getElementById("recentSection");
+  if (prompt.length > 0) {
+    recentSection.classList.add("hidden");
+  } else {
+    const recent = JSON.parse(localStorage.getItem("recentTools")) || [];
+    if (recent.length > 0) recentSection.classList.remove("hidden");
+  }
+});
+
+// Clear recent tools on dustbin icon
+document.getElementById("clearRecent").addEventListener("click", () => {
+  localStorage.removeItem("recentTools");
+  renderRecent();
   document.getElementById("recentSection").classList.add("hidden");
 });
-// Open keyword panel on focus
-document.getElementById("searchInput").addEventListener("focus", () => {
-  generateKeywordPanel(); // Fill the panel
-  document.getElementById("keywordPanel").classList.remove("hidden");
-  document.getElementById("recentSection").classList.add("hidden"); // Hides "Currently used..." section
 
-  // Push state for back navigation
-  history.pushState({ keywordPanelOpen: true }, "");
+// Render keyword panel
+function generateKeywordPanel() {
+  const list = document.getElementById("keywordList");
+  const keywords = [...new Set(aiTools.flatMap(tool => tool.keywords))];
+  list.innerHTML = "";
+
+  keywords.forEach(keyword => {
+    const btn = document.createElement("button");
+    btn.textContent = keyword;
+    btn.style.cssText = `
+      background: #fff;
+      color: #111;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+    `;
+    btn.onclick = () => {
+      document.getElementById("searchInput").value = keyword;
+      document.getElementById("searchInput").dispatchEvent(new Event("input"));
+      document.getElementById("keywordPanel").classList.add("hidden");
+    };
+    list.appendChild(btn);
+  });
+}
+
+// Show keyword panel and push state
+document.getElementById("searchInput").addEventListener("focus", () => {
+  generateKeywordPanel();
+  document.getElementById("keywordPanel").classList.remove("hidden");
+  document.getElementById("recentSection").classList.add("hidden");
+  history.pushState({ searchActive: true }, "", "#search");
+});
+
+// Handle browser back/forward navigation
+window.addEventListener("popstate", (e) => {
+  const keywordPanel = document.getElementById("keywordPanel");
+  const searchInput = document.getElementById("searchInput");
+
+  if (!e.state || !e.state.searchActive) {
+    // Reset search UI when returning home
+    searchInput.value = "";
+    searchInput.blur();
+    document.getElementById("noMatchMsg").classList.add("hidden");
+    document.getElementById("suggestiveBox").classList.add("hidden");
+    keywordPanel.classList.add("hidden");
+
+    renderTools(aiTools);
+    renderRecent();
+  }
 });
 
 // Handle back button to close panel and show "Currently used..." section if needed
