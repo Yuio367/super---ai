@@ -162,3 +162,28 @@ body {
   font-size: 14px;
   color: #fff;
 }
+.hidden {
+  display: none;
+}
+
+.recent-card {
+  min-width: 100px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.recent-card:hover {
+  transform: scale(1.05);
+}
+
+.recent-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 5px;
+}
