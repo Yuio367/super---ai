@@ -260,7 +260,7 @@ const aiTools = [
   }
   // You can add more here...
 ];
-// Load all tools
+// Load all tools and include addToRecent on click
 function renderTools(tools) {
   const container = document.getElementById("aiList");
   container.innerHTML = "";
@@ -280,8 +280,46 @@ function renderTools(tools) {
   });
 }
 
+// Track recently used tools
+function addToRecent(tool) {
+  let recent = JSON.parse(localStorage.getItem("recentTools")) || [];
+  recent = recent.filter(t => t.name !== tool.name);
+  recent.unshift(tool);
+  if (recent.length > 10) recent = recent.slice(0, 10);
+  localStorage.setItem("recentTools", JSON.stringify(recent));
+  renderRecent();
+}
+
+// Render the "Currently used..." section
+function renderRecent() {
+  const recentList = JSON.parse(localStorage.getItem("recentTools")) || [];
+  const container = document.getElementById("recentTools");
+  const section = document.getElementById("recentSection");
+
+  container.innerHTML = "";
+
+  if (recentList.length === 0) {
+    section.classList.add("hidden");
+    return;
+  }
+
+  section.classList.remove("hidden");
+
+  recentList.forEach(tool => {
+    const div = document.createElement("div");
+    div.className = "recent-card";
+    div.innerHTML = `
+      <img src="${tool.logo}" alt="${tool.name}" />
+      <h4>${tool.name}</h4>
+    `;
+    div.onclick = () => window.open(tool.link, "_blank");
+    container.appendChild(div);
+  });
+}
+
 // Initial render
 renderTools(aiTools);
+renderRecent(); // Load recent tools on page load
 
 // Updated Search filter with Suggestive box
 document.getElementById("searchInput").addEventListener("input", (e) => {
