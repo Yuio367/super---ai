@@ -389,3 +389,7 @@ function renderRecent() {
     container.appendChild(div);
   });
 }
+// Hide "Currently used..." section when search input is focused
+document.getElementById("searchInput").addEventListener("focus", () => {
+  document.getElementById("recentSection").classList.add("hidden");
+});
