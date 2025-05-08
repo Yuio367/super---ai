@@ -357,3 +357,35 @@ document.getElementById("searchInput").addEventListener("input", (e) => {
 
   renderTools(matches);
 });
+// Function to clear recent tools when dustbin icon is clicked
+document.getElementById("clearRecent").addEventListener("click", () => {
+  localStorage.removeItem("recentTools");  // Remove the stored recent tools
+  renderRecent();  // Re-render the section (it will hide if empty)
+  document.getElementById("recentSection").classList.add("hidden"); // Hide the "Currently used..." section
+});
+
+// Function to render recent tools
+function renderRecent() {
+  const recentList = JSON.parse(localStorage.getItem("recentTools")) || [];
+  const container = document.getElementById("recentTools");
+  const section = document.getElementById("recentSection");
+  container.innerHTML = "";
+
+  if (recentList.length === 0) {
+    section.classList.add("hidden"); // Hide section if there are no recent tools
+    return;
+  }
+
+  section.classList.remove("hidden"); // Show section if there are recent tools
+
+  recentList.forEach(tool => {
+    const div = document.createElement("div");
+    div.className = "recent-card";
+    div.innerHTML = `
+      <img src="${tool.logo}" alt="${tool.name}" />
+      <h4>${tool.name}</h4>
+    `;
+    div.onclick = () => window.open(tool.link, "_blank");
+    container.appendChild(div);
+  });
+}
