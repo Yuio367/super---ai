@@ -179,77 +179,77 @@ const aiTools = [
     logo: "https://i.ibb.co/VWrMPgqb/1746613491424.webp",
     link: "https://www.grammarly.com/",
     description: "Powerful AI for conversations, writing, coding.",
-    
+    keywords: ["grammarly", "grammar checker", "writing assistant", "spell check", "punctuation", "proofreading", "AI writing", "sentence correction", "email writing", "english writing", "text improvement"]
   },
   {
     name: "Microsoft Copilot",
     logo: "https://i.ibb.co/xt1H5wmk/1746613828563.jpg",
     link: "https://copilot.microsoft.com/",
     description: "Powerful AI for conversations, writing, coding.",
-    
+    keywords: ["microsoft copilot", "copilot", "AI assistant", "office 365", "word ai", "excel ai", "powerpoint automation", "microsoft ai", "writing support", "document ai", "microsoft productivity"]
   },
   {
     name: "Sora.com",
     logo: "https://i.ibb.co/tpkDvFVK/1746614113197.jpg",
     link: "https://sora.com/",
     description: "Powerful AI for conversations, writing, coding.",
-    
+    keywords: ["sora", "video AI", "text to video", "ai storytelling", "video generation", "educational videos", "sora video", "ai animation", "content creation", "visual storytelling"]
   },
   {
     name: "Easy With AI(Capcut)",
     logo: "https://i.ibb.co/PZ0LkGvW/1746614284308.jpg",
     link: "https://easywithai.com/ai-video-tools/capcut/",
     description: "Powerful AI for conversations, writing, coding.",
-    
+    keywords: ["easy with ai", "capcut", "video editing", "capcut templates", "ai tools", "ai video", "edit with ai", "content editing", "capcut effects", "easy video making"]
   },
   {
     name: "HubSpot",
     logo: "https://i.ibb.co/1GP3b50S/1746614455407.jpg",
     link: "https://www.hubspot.com/",
     description: "Powerful AI for conversations, writing, coding.",
-    
+    keywords: ["hubspot", "crm", "sales automation", "marketing automation", "customer support", "hubspot ai", "email campaigns", "lead generation", "analytics", "workflow automation", "hubspot tools"]
   },
   {
     name: "Gong.io",
     logo: "https://i.ibb.co/kVXZHWDh/gonglogo.png",
     link: "https://www.gong.io/",
     description: "Powerful AI for conversations, writing, coding.",
-    
+    keywords: ["gong", "gong.io", "sales ai", "conversation intelligence", "sales analytics", "call tracking", "ai insights", "revenue intelligence", "sales enablement", "meeting analysis"]
   },
   {
     name: "Salesforce",
     logo: "https://i.ibb.co/93ChtMYh/1746614736083.jpg",
     link: "https://www.salesforce.com/in/",
     description: "Powerful AI for conversations, writing, coding.",
-    
+    keywords: ["salesforce", "crm", "salesforce ai", "customer management", "marketing cloud", "sales tools", "business automation", "lead tracking", "workflow", "client relationship", "einstein ai"]
   },
   {
     name: "Gamma",
     logo: "https://i.ibb.co/VYJF5bqV/1746614868411.png",
     link: "https://gamma.app/",
     description: "Powerful AI for conversations, writing, coding.",
-    
+    keywords: ["gamma", "presentation tool", "ai presentation", "slides ai", "deck creator", "pitch deck", "slide generator", "ai visuals", "presentation design", "auto slides", "professional decks"]
   },
   {
     name: "Slidebean",
     logo: "https://i.ibb.co/jZhxskGC/1746614990780.jpg",
     link: "https://slidebean.com/",
     description: "Powerful AI for conversations, writing, coding.",
-    
+    keywords: ["slidebean", "pitch deck", "presentation tool", "startup slides", "slide design", "ai pitch", "fundraising decks", "automated presentations", "slide generator", "startup presentation"]
   },
   {
     name: "Beautiful.ai",
     logo: "https://i.ibb.co/nMbwHYHZ/1746615150102.png",
     link: "https://www.beautiful.ai/",
     description: "Powerful AI for conversations, writing, coding.",
-    
+    keywords: ["beautiful.ai", "presentation maker", "slides ai", "design tool", "professional slides", "visual storytelling", "business presentation", "deck designer", "ai slides", "automatic layout"]
   },
   {
     name: "Two AI",
     logo: "https://i.ibb.co/FL5tbpSx/1746615374659.png",
     link: "https://chat.two.ai",
     description: "Powerful AI for conversations, writing, coding.",
-    
+    keywords: ["two ai", "conversation ai", "collaboration ai", "assistant tool", "team productivity", "virtual coworker", "creative brainstorming", "ai chatbot", "two chat", "productivity ai"]
   },
   {
     name: "D-ID",
