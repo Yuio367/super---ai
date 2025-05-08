@@ -188,11 +188,12 @@ body {
   margin-bottom: 5px;
 }
 .dustbin-icon {
-  width: 28px;
-  height: 28px;
-  border: 2px solid red;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid red;
   border-radius: 50%;
   padding: 3px;
   background-color: white;
   cursor: pointer;
+  box-sizing: content-box;
 }
