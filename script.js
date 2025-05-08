@@ -393,3 +393,52 @@ function renderRecent() {
 document.getElementById("searchInput").addEventListener("focus", () => {
   document.getElementById("recentSection").classList.add("hidden");
 });
+// Open keyword panel on focus
+document.getElementById("searchInput").addEventListener("focus", () => {
+  generateKeywordPanel(); // Fill the panel
+  document.getElementById("keywordPanel").classList.remove("hidden");
+  document.getElementById("recentSection").classList.add("hidden"); // Hides "Currently used..." section
+
+  // Push state for back navigation
+  history.pushState({ keywordPanelOpen: true }, "");
+});
+
+// Handle back button to close panel and show "Currently used..." section if needed
+window.addEventListener("popstate", (e) => {
+  const panel = document.getElementById("keywordPanel");
+  if (!panel.classList.contains("hidden")) {
+    panel.classList.add("hidden");
+    // Restore "Currently used..." section if recent tools exist
+    const recent = JSON.parse(localStorage.getItem("recentTools")) || [];
+    if (recent.length > 0) {
+      document.getElementById("recentSection").classList.remove("hidden");
+    }
+    history.pushState(null, ""); // Prevent navigating away
+  }
+});
+
+// Generate keyword buttons in panel
+function generateKeywordPanel() {
+  const list = document.getElementById("keywordList");
+  const keywords = [...new Set(aiTools.flatMap(tool => tool.keywords))];
+  list.innerHTML = ""; // Clear the previous list
+
+  keywords.forEach(keyword => {
+    const btn = document.createElement("button");
+    btn.textContent = keyword;
+    btn.style.cssText = `
+      background: #fff;
+      color: #111;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+    `;
+    btn.onclick = () => {
+      document.getElementById("searchInput").value = keyword;
+      document.getElementById("searchInput").dispatchEvent(new Event("input"));
+      document.getElementById("keywordPanel").classList.add("hidden"); // Hide the panel after clicking
+    };
+    list.appendChild(btn);
+  });
+}
