@@ -274,7 +274,7 @@ function renderTools(tools) {
     `;
     card.onclick = () => {
       window.open(tool.link, "_blank");
-      addToRecent(tool); // Track recently used tool
+      addToRecent(tool);
     };
     container.appendChild(card);
   });
@@ -317,124 +317,6 @@ function renderRecent() {
   });
 }
 
-// Initial render
-renderTools(aiTools);
-renderRecent(); // Load recent tools on page load
-
-// Updated Search filter with Suggestive box
-document.getElementById("searchInput").addEventListener("input", (e) => {
-  const prompt = e.target.value.toLowerCase();
-  const matches = aiTools.filter(tool =>
-    tool.keywords.some(k => prompt.includes(k)) || tool.name.toLowerCase().includes(prompt)
-  );
-
-  const noMatch = matches.length === 0;
-  document.getElementById("noMatchMsg").classList.toggle("hidden", !noMatch);
-  document.getElementById("suggestiveBox").classList.toggle("hidden", !noMatch);
-
-  if (noMatch) {
-    const allKeywords = [...new Set(aiTools.flatMap(tool => tool.keywords))];
-    const suggestions = allKeywords.filter(k => k.includes(prompt) || prompt.includes(k)).slice(0, 6);
-
-    const suggestiveList = document.getElementById("suggestiveList");
-    suggestiveList.innerHTML = "";
-
-    if (suggestions.length) {
-      suggestions.forEach(s => {
-        const li = document.createElement("li");
-        li.textContent = s;
-        li.style.cursor = "pointer";
-        li.onclick = () => {
-          document.getElementById("searchInput").value = s;
-          document.getElementById("searchInput").dispatchEvent(new Event("input"));
-        };
-        suggestiveList.appendChild(li);
-      });
-    } else {
-      suggestiveList.innerHTML = "<li>No related keywords found</li>";
-    }
-  }
-
-  renderTools(matches);
-});
-// Function to clear recent tools when dustbin icon is clicked
-document.getElementById("clearRecent").addEventListener("click", () => {
-  localStorage.removeItem("recentTools");  // Remove the stored recent tools
-  renderRecent();  // Re-render the section (it will hide if empty)
-  document.getElementById("recentSection").classList.add("hidden"); // Hide the "Currently used..." section
-});
-
-// Function to render recent tools
-function renderRecent() {
-  const recentList = JSON.parse(localStorage.getItem("recentTools")) || [];
-  const container = document.getElementById("recentTools");
-  const section = document.getElementById("recentSection");
-  container.innerHTML = "";
-
-  if (recentList.length === 0) {
-    section.classList.add("hidden"); // Hide section if there are no recent tools
-    return;
-  }
-
-  section.classList.remove("hidden"); // Show section if there are recent tools
-
-  recentList.forEach(tool => {
-    const div = document.createElement("div");
-    div.className = "recent-card";
-    div.innerHTML = `
-      <img src="${tool.logo}" alt="${tool.name}" />
-      <h4>${tool.name}</h4>
-    `;
-    div.onclick = () => window.open(tool.link, "_blank");
-    container.appendChild(div);
-  });
-}
-// Maintain original search input handler
-document.getElementById("searchInput").addEventListener("input", (e) => {
-  const prompt = e.target.value.toLowerCase();
-  const matches = aiTools.filter(tool =>
-    tool.keywords.some(k => prompt.includes(k)) || tool.name.toLowerCase().includes(prompt)
-  );
-
-  const noMatch = matches.length === 0;
-  document.getElementById("noMatchMsg").classList.toggle("hidden", !noMatch);
-  document.getElementById("suggestiveBox").classList.toggle("hidden", !noMatch);
-
-  if (noMatch) {
-    const allKeywords = [...new Set(aiTools.flatMap(tool => tool.keywords))];
-    const suggestions = allKeywords.filter(k => k.includes(prompt) || prompt.includes(k)).slice(0, 6);
-
-    const suggestiveList = document.getElementById("suggestiveList");
-    suggestiveList.innerHTML = "";
-
-    if (suggestions.length) {
-      suggestions.forEach(s => {
-        const li = document.createElement("li");
-        li.textContent = s;
-        li.style.cursor = "pointer";
-        li.onclick = () => {
-          document.getElementById("searchInput").value = s;
-          document.getElementById("searchInput").dispatchEvent(new Event("input"));
-        };
-        suggestiveList.appendChild(li);
-      });
-    } else {
-      suggestiveList.innerHTML = "<li>No related keywords found</li>";
-    }
-  }
-
-  renderTools(matches);
-
-  // Hide "Currently used..." if any search is active
-  const recentSection = document.getElementById("recentSection");
-  if (prompt.length > 0) {
-    recentSection.classList.add("hidden");
-  } else {
-    const recent = JSON.parse(localStorage.getItem("recentTools")) || [];
-    if (recent.length > 0) recentSection.classList.remove("hidden");
-  }
-});
-
 // Clear recent tools on dustbin icon
 document.getElementById("clearRecent").addEventListener("click", () => {
   localStorage.removeItem("recentTools");
@@ -468,7 +350,51 @@ function generateKeywordPanel() {
   });
 }
 
-// Show keyword panel and push state
+// Handle search input with suggestive box + hide/show recent section
+document.getElementById("searchInput").addEventListener("input", (e) => {
+  const prompt = e.target.value.toLowerCase();
+  const matches = aiTools.filter(tool =>
+    tool.keywords.some(k => prompt.includes(k)) || tool.name.toLowerCase().includes(prompt)
+  );
+
+  const noMatch = matches.length === 0;
+  document.getElementById("noMatchMsg").classList.toggle("hidden", !noMatch);
+  document.getElementById("suggestiveBox").classList.toggle("hidden", !noMatch);
+
+  if (noMatch) {
+    const allKeywords = [...new Set(aiTools.flatMap(tool => tool.keywords))];
+    const suggestions = allKeywords.filter(k => k.includes(prompt) || prompt.includes(k)).slice(0, 6);
+    const suggestiveList = document.getElementById("suggestiveList");
+    suggestiveList.innerHTML = "";
+
+    if (suggestions.length) {
+      suggestions.forEach(s => {
+        const li = document.createElement("li");
+        li.textContent = s;
+        li.style.cursor = "pointer";
+        li.onclick = () => {
+          document.getElementById("searchInput").value = s;
+          document.getElementById("searchInput").dispatchEvent(new Event("input"));
+        };
+        suggestiveList.appendChild(li);
+      });
+    } else {
+      suggestiveList.innerHTML = "<li>No related keywords found</li>";
+    }
+  }
+
+  renderTools(matches);
+
+  const recentSection = document.getElementById("recentSection");
+  if (prompt.length > 0) {
+    recentSection.classList.add("hidden");
+  } else {
+    const recent = JSON.parse(localStorage.getItem("recentTools")) || [];
+    if (recent.length > 0) recentSection.classList.remove("hidden");
+  }
+});
+
+// Show keyword panel on focus and push browser history
 document.getElementById("searchInput").addEventListener("focus", () => {
   generateKeywordPanel();
   document.getElementById("keywordPanel").classList.remove("hidden");
@@ -476,13 +402,13 @@ document.getElementById("searchInput").addEventListener("focus", () => {
   history.pushState({ searchActive: true }, "", "#search");
 });
 
-// Handle browser back/forward navigation
+// Handle back/forward button for clean navigation
 window.addEventListener("popstate", (e) => {
   const keywordPanel = document.getElementById("keywordPanel");
   const searchInput = document.getElementById("searchInput");
 
+  // Reset UI when navigating back from search
   if (!e.state || !e.state.searchActive) {
-    // Reset search UI when returning home
     searchInput.value = "";
     searchInput.blur();
     document.getElementById("noMatchMsg").classList.add("hidden");
@@ -494,42 +420,6 @@ window.addEventListener("popstate", (e) => {
   }
 });
 
-// Handle back button to close panel and show "Currently used..." section if needed
-window.addEventListener("popstate", (e) => {
-  const panel = document.getElementById("keywordPanel");
-  if (!panel.classList.contains("hidden")) {
-    panel.classList.add("hidden");
-    // Restore "Currently used..." section if recent tools exist
-    const recent = JSON.parse(localStorage.getItem("recentTools")) || [];
-    if (recent.length > 0) {
-      document.getElementById("recentSection").classList.remove("hidden");
-    }
-    history.pushState(null, ""); // Prevent navigating away
-  }
-});
-
-// Generate keyword buttons in panel
-function generateKeywordPanel() {
-  const list = document.getElementById("keywordList");
-  const keywords = [...new Set(aiTools.flatMap(tool => tool.keywords))];
-  list.innerHTML = ""; // Clear the previous list
-
-  keywords.forEach(keyword => {
-    const btn = document.createElement("button");
-    btn.textContent = keyword;
-    btn.style.cssText = `
-      background: #fff;
-      color: #111;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 20px;
-      cursor: pointer;
-    `;
-    btn.onclick = () => {
-      document.getElementById("searchInput").value = keyword;
-      document.getElementById("searchInput").dispatchEvent(new Event("input"));
-      document.getElementById("keywordPanel").classList.add("hidden"); // Hide the panel after clicking
-    };
-    list.appendChild(btn);
-  });
-}
+// Initial render
+renderTools(aiTools);
+renderRecent();
