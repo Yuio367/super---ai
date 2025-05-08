@@ -12,44 +12,62 @@
     <img src="https://i.ibb.co/ZpYFg5Yz/1746513026300-1.png" class="intro-img" />
   </div>
 
-  <!-- Main Content -->
+  <!-- Main Content (Homepage) -->
   <div id="mainContent" style="display: none;">
     <header class="header">
       <img src="https://i.ibb.co/70BqCFT/image.png" class="logo-circle" />
       <input type="text" id="searchInput" placeholder="𝐄𝐧𝐭𝐞𝐫 𝐭𝐡𝐞 𝐊𝐄𝐘𝐖𝐎𝐑𝐃 𝐨𝐟 𝐲𝐨𝐮𝐫 𝐫𝐞𝐪𝐮𝐢𝐫𝐞𝐦𝐞𝐧𝐭𝐬..." />
     </header>
-<section id="recentSection" class="hidden" style="margin: 20px 0;">
-  <div style="display: flex; justify-content: space-between; align-items: center;">
-    <h2 style="color: white; margin: 0;">Currently used...</h2>
-    <img src="https://i.ibb.co/cj30649/delete.png" id="clearRecent"
-         style="width: 24px; height: 24px; border: 2px solid red; border-radius: 50%; padding: 4px; cursor: pointer; background-color: white;"
-         alt="Clear Recent" />
-  </div>
-  <div id="recentTools" style="display: flex; overflow-x: auto; gap: 10px; padding: 10px 0;"></div>
-</section>
-    <div id="aiList" class="ai-list"></div>
-    <p id="noMatchMsg" class="hidden">𝙎𝙤𝙧𝙧𝙮,𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙞𝙧𝙚𝙢𝙚𝙣𝙩𝙨 𝙙𝙤𝙚𝙨𝙣'𝙩 𝙢𝙖𝙩𝙘𝙝𝙚𝙙 😩.𝙏𝙧𝙮 𝙙𝙞𝙛𝙛𝙚𝙧𝙚𝙣𝙩 𝙠𝙚𝙮𝙬𝙤𝙧𝙙𝙨😇.</p>
-    <div id="suggestiveBox" class="hidden">
-  <h4>Suggestions:</h4>
-  <ul id="suggestiveList"></ul>
+
+    <!-- Currently Used Tools (Homepage Only) -->
+    <section id="recentSection" class="hidden" style="margin: 20px 0;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 style="color: white; margin: 0;">Currently used...</h2>
+        <img src="https://i.ibb.co/cj30649/delete.png" id="clearRecent"
+             style="width: 24px; height: 24px; border: 2px solid red; border-radius: 50%; padding: 4px; cursor: pointer; background-color: white;"
+             alt="Clear Recent" />
+      </div>
+      <div id="recentTools" style="display: flex; overflow-x: auto; gap: 10px; padding: 10px 0;"></div>
+    </section>
+
+    <!-- Search Results + Suggestions -->
+    <div id="searchResultsArea">
+      <div id="aiList" class="ai-list"></div>
+      <p id="noMatchMsg" class="hidden">𝙎𝙤𝙧𝙧𝙮,𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙞𝙧𝙚𝙢𝙚𝙣𝙩𝙨 𝙙𝙤𝙚𝙨𝙣'𝙩 𝙢𝙖𝙩𝙘𝙝𝙚𝙙 😩.𝙏𝙧𝙮 𝙙𝙞𝙛𝙛𝙚𝙧𝙚𝙣𝙩 𝙠𝙚𝙮𝙬𝙤𝙧𝙙𝙨😇.</p>
+      <div id="suggestiveBox" class="hidden">
+        <h4>Suggestions:</h4>
+        <ul id="suggestiveList"></ul>
+      </div>
     </div>
   </div>
 
+  <!-- Keyword Panel Page (Search View) -->
+  <div id="keywordPanel" class="hidden" style="
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+  ">
+    <header class="header" style="position: sticky; top: 0; background: #111;">
+      <img src="https://i.ibb.co/70BqCFT/image.png" class="logo-circle" />
+      <input type="text" id="searchInputPanel" placeholder="Search for AI tools..." />
+    </header>
+    <h2 style="color: white; margin: 15px 0;">Explore Keywords</h2>
+    <div id="keywordList" style="display: flex; flex-wrap: wrap; gap: 10px;"></div>
 
+    <div id="panelResults" class="ai-list"></div>
+    <p id="panelNoMatchMsg" class="hidden">𝙉𝙤 𝙧𝙚𝙨𝙪𝙡𝙩𝙨 𝙛𝙤𝙪𝙣𝙙 😩.</p>
+    <div id="panelSuggestiveBox" class="hidden">
+      <h4>Suggestions:</h4>
+      <ul id="panelSuggestiveList"></ul>
+    </div>
+  </div>
+
+  <!-- Script -->
   <script src="script.js"></script>
-<!-- Keyword Panel Section -->
-<div id="keywordPanel" class="hidden" style="
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #111;
-  z-index: 1000;
-  overflow-y: auto;
-  padding: 20px;
-">
-  <h2 style="color: white; margin-bottom: 15px;">Explore Keywords</h2>
-  <div id="keywordList" style="display: flex; flex-wrap: wrap; gap: 10px;"></div>
-</div>
 </body>
 </html>
